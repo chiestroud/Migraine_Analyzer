@@ -1,7 +1,14 @@
-# Chie Stroud React Template
+# MigraineAnalyzer
 
-**This Template comes with NavBar and basic routing using React-Router-Dom**
+Migraine Analyzer is an application that analyzes your migraines. This is not a typical migraine diary to log migraines. 
+Users can input detailed information about their migraines and the app will help you analyze your migraine trends!
 
-This is just like the webpack template. Use it, create the repo, connect it to your local and `npm i`.
+Features
+- Migraine Analyzer features its own API using ASP.NET Core and T-SQL for the database. 
+- More features to come soon.
 
-- [Steps to deploy](https://github.com/nss-nightclass-projects/REACT-Deployment-Netlify)
+Wireframes
+https://www.canva.com/design/DAExcXqg1mc/9YgFI-QMs9NB1WWd9JQN3A/view#1
+
+ERD
+https://dbdiagram.io/embed/61a82ff78c901501c0dc7b27

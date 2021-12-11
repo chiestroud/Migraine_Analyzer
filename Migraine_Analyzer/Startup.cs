@@ -55,6 +55,7 @@ namespace Migraine_Analyzer
         {
             if (env.IsDevelopment())
             {
+                app.UseCors(cfg => cfg.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Migraine_Analyzer v1"));
