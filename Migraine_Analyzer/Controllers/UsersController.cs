@@ -25,11 +25,29 @@ namespace Migraine_Analyzer.Controllers
             return Ok(_usersRepo.GetAll());
         }
 
+        // Get user from id
         [HttpGet("singleUser/{userId}")]
         public IActionResult GetSingleUserFromId(int userId)
         {
             var user = _usersRepo.GetSingleUser(userId);
             return Ok(user);
+        }
+
+        // Get user from google id
+        [HttpGet("googleId/{googleId}")]
+        public IActionResult GetSingleUserByGoogleId(string googleId)
+        {
+            var user = _usersRepo.GetUserByGoogleId(googleId);
+            if (user is null) return Ok(null);
+            return Ok(user);
+        }
+
+        // Add a new user
+        [HttpPost]
+        public IActionResult AddSingleUser(Users user)
+        {
+            _usersRepo.Add(user);
+            return Created($"/users/{user.Id}", user);
         }
 
         [HttpPut("updateUser/{userId}")]

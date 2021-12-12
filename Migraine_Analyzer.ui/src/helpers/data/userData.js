@@ -8,4 +8,12 @@ const getAllUsers = () => new Promise((resolve, reject) => {
   axios.get(`${apiUrl}/Users`).then((response) => resolve(response.data)).catch(reject);
 });
 
-export default getAllUsers;
+const createUser = (userInfoObj) => new Promise((resolve, reject) => {
+  axios.post(`${apiUrl}/Users`, userInfoObj).then((response) => resolve(response.data)).catch(reject);
+});
+
+const getSingleUserByGoogleId = (id) => new Promise((resolve, reject) => {
+  axios.get(`${apiUrl}/Users/googleId/${id}`).then((response) => resolve(response.data)).catch(reject);
+});
+
+export { getAllUsers, createUser, getSingleUserByGoogleId };
