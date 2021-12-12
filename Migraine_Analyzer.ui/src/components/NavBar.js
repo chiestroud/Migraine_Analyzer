@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import {
   Collapse,
   Navbar,
   NavbarToggler,
   Nav,
   NavItem,
-  UncontrolledDropdown,
-  DropdownToggle,
-  DropdownMenu,
-  DropdownItem,
   NavbarText,
   Button
 } from 'reactstrap';
 import { signInUser, signOutUser } from '../helpers/auth';
 
-const NavBar = () => {
+const NavBar = ({ user, setUser }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -27,33 +24,34 @@ const NavBar = () => {
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
           <Nav className="mr-auto" navbar>
-            <NavItem>
-              <Link className='nav-link' to="/first">First Page</Link>
-            </NavItem>
-            <NavItem>
-              <Link className='nav-link' to="/second">Second Page</Link>
-            </NavItem>
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle nav caret>
-                Dropdown
-              </DropdownToggle>
-              <DropdownMenu right>
-                <DropdownItem>
-                  <Link className='nav-link' to="/drop-down1">Dropdown Link1</Link>
-                </DropdownItem>
-                <DropdownItem>
-                  <Link className='nav-link' to="/drop-down2">Dropdown Link2</Link>
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            <Button color='info' onClick={signInUser}>Sign In</Button>
-            <Button color='danger' onClick={signOutUser}>Log Out</Button>
+            {user
+              ? <>
+                  <NavItem>
+                  <Link className='nav-link' to="/first">First Page</Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link className='nav-link' to="/second">Second Page</Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link className='nav-link' to="/userInfo">My Profile</Link>
+                  </NavItem>
+              </>
+              : ''
+            }
           </Nav>
-          <NavbarText>Welcome</NavbarText>
+          <NavbarText>
+            {user
+              ? <Button color='danger' onClick={signOutUser}>Log Out</Button>
+              : <Button color='info' onClick={() => signInUser(setUser)}>Sign In</Button>
+            }
+          </NavbarText>
         </Collapse>
       </Navbar>
     </div>
   );
 };
-
+NavBar.propTypes = {
+  user: PropTypes.any,
+  setUser: PropTypes.func,
+};
 export default NavBar;
