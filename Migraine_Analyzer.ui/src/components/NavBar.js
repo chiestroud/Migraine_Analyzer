@@ -27,10 +27,13 @@ const NavBar = ({ user, setUser }) => {
             {user
               ? <>
                   <NavItem>
-                  <Link className='nav-link' to="/first">First Page</Link>
+                  <Link className='nav-link' to="/newMigraineForm">Record Migraine</Link>
                   </NavItem>
                   <NavItem>
-                    <Link className='nav-link' to="/second">Second Page</Link>
+                    <Link className='nav-link' to="/migraineHistory">Migraine History</Link>
+                  </NavItem>
+                  <NavItem>
+                    <Link className='nav-link' to="/migraineAnalysis">Migraine Analysis</Link>
                   </NavItem>
                   <NavItem>
                     <Link className='nav-link' to="/userInfo">My Profile</Link>
