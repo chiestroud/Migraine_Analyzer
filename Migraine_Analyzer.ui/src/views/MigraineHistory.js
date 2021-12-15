@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { CardLink, Table } from 'reactstrap';
-import getMigrainesFromUserId from '../helpers/data/migraineData';
+import { getMigrainesFromUserId } from '../helpers/data/migraineData';
 
 export default function MigraineHistory({ user }) {
   const [records, setRecords] = useState([]);

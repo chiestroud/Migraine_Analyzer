@@ -4,7 +4,7 @@ import {
   Button,
   Card, CardBody, CardImg, CardText, CardTitle
 } from 'reactstrap';
-import UserForm from '../components/UserForm';
+import UserForm from '../components/forms/UserForm';
 import { getSingleUserByUserId, updateUser } from '../helpers/data/userData';
 
 export default function UserProfile({ user }) {
