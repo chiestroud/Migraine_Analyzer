@@ -105,6 +105,7 @@ export default function MigraineForm({ user }) {
             <FormGroup>
               <Label for="time">TIME</Label>
               <Input type="select" name="select" id="time">
+                <option value="">Select Time</option>
                 {time.map((tm) => (
                   <option key={tm.id}>{tm.time}</option>
                 ))}
@@ -115,6 +116,7 @@ export default function MigraineForm({ user }) {
             <FormGroup>
               <Label for="intensity">INTENSITY</Label>
               <Input type="select" name="select" id="intensity">
+                <option value="">Select  Intensity</option>
                 {intensity.map((x, index) => (
                   <option key={index}>{x}</option>
                 ))}
@@ -125,6 +127,7 @@ export default function MigraineForm({ user }) {
             <FormGroup>
               <Label for="duration">DURATION</Label>
               <Input type="select" name="select" id="duration">
+                <option value="">Select Duration</option>
                 {duration.map((dur) => (
                   <option key={dur.id}>{dur.duration}</option>
                 ))}
@@ -137,6 +140,7 @@ export default function MigraineForm({ user }) {
             <FormGroup>
               <Label for="weather">WEATHER</Label>
               <Input type="select" name="select" id="weather">
+                <option value="">Select Weather</option>
                 {weather.map((we, index) => (
                   <option key={index}>{we}</option>
                 ))}
@@ -147,6 +151,7 @@ export default function MigraineForm({ user }) {
             <FormGroup>
               <Label for="temperature">TEMPERATURE</Label>
               <Input type="select" name="select" id="temperature">
+                <option value="">Select Temperature</option>
                 {temp.map((tem) => (
                   <option key={tem.id}>{tem.temp}</option>
                 ))}
@@ -157,6 +162,7 @@ export default function MigraineForm({ user }) {
             <FormGroup>
               <Label for="emotion">EMOTION</Label>
               <Input type="select" name="select" id="emotion">
+                <option value="">Select Emotion</option>
                 {emotions.map((emotion, index) => (
                   <option key={index}>{emotion}</option>
                 ))}
@@ -169,6 +175,7 @@ export default function MigraineForm({ user }) {
             <FormGroup>
               <Label for="food">FOOD</Label>
               <Input type="select" name="select" id="food">
+                <option value="">Select Food</option>
                 {userFood.map((food) => (
                   <option key={food.id}>{food.dishName}</option>
                 ))}
@@ -179,6 +186,7 @@ export default function MigraineForm({ user }) {
             <FormGroup>
               <Label for="drink">DRINK</Label>
               <Input type="select" name="select" id="drink">
+                <option value="">Select Drink</option>
                 {userDrinks.map((drink) => (
                   <option key={drink.id}>{drink.drinkName}</option>
                 ))}
@@ -189,6 +197,7 @@ export default function MigraineForm({ user }) {
             <FormGroup>
               <Label for="medicine">MEDICINE</Label>
               <Input type="select" name="select" id="medicine">
+                <option value="">Select Medicine</option>
                 {userMedicine.map((med) => (
                   <option key={med.id}>{med.medicineName}</option>
                 ))}

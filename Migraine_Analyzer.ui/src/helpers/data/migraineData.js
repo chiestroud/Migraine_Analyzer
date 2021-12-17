@@ -19,6 +19,22 @@ const getEmotionType = () => new Promise((resolve, reject) => {
   axios.get(`${apiUrl}/Migraines/emotionType`).then((response) => resolve(response.data)).catch(reject);
 });
 
+const getTotalMigraines = (userId) => new Promise((resolve, reject) => {
+  axios.get(`${apiUrl}/Migraines/count/${userId}`).then((response) => resolve(response.data)).catch(reject);
+});
+
+const getTopMedicine = (userId) => new Promise((resolve, reject) => {
+  axios.get(`${apiUrl}/Migraines/topMedicine/${userId}`).then((response) => resolve(response.data)).catch(reject);
+});
+
+const getTopFood = (userId) => new Promise((resolve, reject) => {
+  axios.get(`${apiUrl}/Migraines/topFood/${userId}`).then((response) => resolve(response.data)).catch(reject);
+});
+
+const getTopDrinks = (userId) => new Promise((resolve, reject) => {
+  axios.get(`${apiUrl}/Migraines/topDrinks/${userId}`).then((response) => resolve(response.data)).catch(reject);
+});
+
 export {
-  getMigrainesFromUserId, getIntensity, getWeatherType, getEmotionType
+  getMigrainesFromUserId, getIntensity, getWeatherType, getEmotionType, getTotalMigraines, getTopMedicine, getTopFood, getTopDrinks
 };
