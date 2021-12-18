@@ -17,9 +17,9 @@ export default function MigraineHistory({ user }) {
   };
 
   return (
-    <section>
+    <section className="form-container">
       <h1>{user?.firstName}&apos;s Migraine History</h1>
-        <Table striped bordered className='migraine-history-table'>
+        <Table striped bordered className='migraine-history-table table-dark'>
           <tbody className='migraine-history-card'>
             <tr>
               <th>Date</th>

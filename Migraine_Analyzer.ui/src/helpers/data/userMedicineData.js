@@ -4,7 +4,11 @@ import { apiConfig } from '../apiKeys';
 const { apiUrl } = apiConfig;
 
 const getUserMedicine = (userId) => new Promise((resolve, reject) => {
-  axios.get(`${apiUrl}/userMedicine/${userId}`).then((response) => resolve(response.data)).catch(reject);
+  axios.get(`${apiUrl}/UserMedicine/${userId}`).then((response) => resolve(response.data)).catch(reject);
 });
 
-export default getUserMedicine;
+const addUserMedicine = (userObj) => new Promise((resolve, reject) => {
+  axios.post(`${apiUrl}/UserMedicine`, userObj).then((response) => resolve(response.data)).catch(reject);
+});
+
+export { getUserMedicine, addUserMedicine };

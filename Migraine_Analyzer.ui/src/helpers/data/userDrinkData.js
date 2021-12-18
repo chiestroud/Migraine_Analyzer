@@ -7,4 +7,8 @@ const getUserDrinks = (userId) => new Promise((resolve, reject) => {
   axios.get(`${apiUrl}/UserDrink/${userId}`).then((response) => resolve(response.data)).catch(reject);
 });
 
-export default getUserDrinks;
+const addUserDrink = (userDrinkObj) => new Promise((resolve, reject) => {
+  axios.post(`${apiUrl}/UserDrink`, userDrinkObj).then((response) => resolve(response.data)).catch(reject);
+});
+
+export { getUserDrinks, addUserDrink };

@@ -19,12 +19,12 @@ export default function MigraineAnalysis({ user }) {
   }, []);
   return (
     <>
-    <section>
+    <section className="form-container">
       <h1>{user?.firstName}&apos;s Migraine Analysis</h1>
       <h2>Total Migraine Count</h2>
       <h2>{totalCount.Total}</h2>
     </section>
-    <Row>
+    <Row className="analysis-container m-3">
       <Col md={4}>
         <h3>Top Medicines Causing Migraines</h3>
         {medicine.map((med, index) => (

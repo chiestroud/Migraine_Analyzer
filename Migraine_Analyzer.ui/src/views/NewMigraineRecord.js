@@ -4,7 +4,7 @@ import MigraineForm from '../components/forms/MigraineForm';
 
 export default function NewMigraineRecord({ user }) {
   return (
-    <section>
+    <section className="form-container">
       <MigraineForm user={user} />
     </section>
   );

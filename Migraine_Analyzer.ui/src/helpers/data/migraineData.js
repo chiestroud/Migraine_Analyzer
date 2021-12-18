@@ -35,6 +35,11 @@ const getTopDrinks = (userId) => new Promise((resolve, reject) => {
   axios.get(`${apiUrl}/Migraines/topDrinks/${userId}`).then((response) => resolve(response.data)).catch(reject);
 });
 
+const addNewMigraine = (migraineObj) => new Promise((resolve, reject) => {
+  axios.post(`${apiUrl}/Migraines`, migraineObj).then((response) => resolve(response.data)).catch(reject);
+});
+
 export {
-  getMigrainesFromUserId, getIntensity, getWeatherType, getEmotionType, getTotalMigraines, getTopMedicine, getTopFood, getTopDrinks
+  getMigrainesFromUserId, getIntensity, getWeatherType, getEmotionType,
+  getTotalMigraines, getTopMedicine, getTopFood, getTopDrinks, addNewMigraine
 };

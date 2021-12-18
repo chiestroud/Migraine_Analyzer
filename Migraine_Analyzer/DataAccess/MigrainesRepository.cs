@@ -121,9 +121,10 @@ namespace Migraine_Analyzer.DataAccess
                          comment, foodId, drinkId, medicineId)
                         OUTPUT INSERTED.id
                         VALUES(@userId, GETUTCDATE(), @dayId, 
-                        @monthId, @currentYear, @timeId, @intensity, 
-                        @durationId, @vomit, @weather, @emotion, @comment, 
-                        @temperatureId, @foodId, @drinkId, @medicineId)";
+                        @monthId, @currentYear, @timeId, @intensity,
+                        @durationId, @vomit, @weather, @emotion, @temperatureId, @comment, 
+                        @foodId, @drinkId, @medicineId)";
+
             var parameters = new
             {
                 userId = migraine.UserId,
@@ -135,8 +136,8 @@ namespace Migraine_Analyzer.DataAccess
                 durationId = migraine.DurationId,
                 vomit = migraine.Vomit,
                 weather = migraine.Weather,
-                emotion = migraine.Emotion,
                 temperatureId = migraine.TemperatureId,
+                emotion = migraine.Emotion,
                 comment = migraine.Comment,
                 foodId = migraine.FoodId,
                 drinkId = migraine.DrinkId,
