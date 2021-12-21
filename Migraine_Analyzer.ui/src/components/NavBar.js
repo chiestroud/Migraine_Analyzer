@@ -18,8 +18,8 @@ const NavBar = ({ user, setUser }) => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <div>
-      <Navbar color="light" light expand="md">
+    <div className='nav-bar'>
+      <Navbar color="bg-dark navbar-dark" light expand="md">
         <Link className='navbar-brand' to="/">Home</Link>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>

@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MigraineForm from '../components/forms/MigraineForm';
 
 export default function NewMigraineRecord({ user }) {
   return (
-    <section>
-      <header>This is FirstPage page</header>
-      <h1>{user?.username}</h1>
+    <section className="form-container">
+      <MigraineForm user={user} />
     </section>
   );
 }

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
 import { CardLink, Table } from 'reactstrap';
-import getMigrainesFromUserId from '../helpers/data/migraineData';
+import { getMigrainesFromUserId } from '../helpers/data/migraineData';
 
 export default function MigraineHistory({ user }) {
   const [records, setRecords] = useState([]);
@@ -17,9 +17,9 @@ export default function MigraineHistory({ user }) {
   };
 
   return (
-    <section>
+    <section className="form-container">
       <h1>{user?.firstName}&apos;s Migraine History</h1>
-        <Table striped bordered className='migraine-history-table'>
+        <Table striped bordered className='migraine-history-table table-dark'>
           <tbody className='migraine-history-card'>
             <tr>
               <th>Date</th>
@@ -30,7 +30,7 @@ export default function MigraineHistory({ user }) {
               <tr key={record.id}>
                 <td>{record.monthId}/{record.dayId}/{record.currentYear}</td>
                 <td>{record.intensity}</td>
-                <td><CardLink href='#' onClick={() => handleClick(record.id)}>View Details</CardLink></td>
+                <td><CardLink href='#' onClick={() => handleClick(record.id)}>View Details / Edit</CardLink></td>
               </tr>
             ))}
           </tbody>

@@ -35,19 +35,19 @@ namespace Migraine_Analyzer.Controllers
             return Ok(migraine);
         }
 
-        // Get detailed migraine info with userId => other than drink, food, medicine
-        [HttpGet("migraineDetails/{userId}")]
-        public IActionResult GetDetailedMigraineInfoFromId(int userId)
+        // Get detailed migraine info with migraineId => other than drink, food, medicine
+        [HttpGet("migraineDetails/{migraineId}")]
+        public IActionResult GetDetailedMigraineInfoFromId(int migraineId)
         {
-            var detailedMigraine = _migraineRepo.GetDetailedMigraineInfo(userId);
+            var detailedMigraine = _migraineRepo.GetDetailedMigraineInfo(migraineId);
             return Ok(detailedMigraine);
         }
 
-        // Get detailed migraine info with specific id => drink, food, medicine
-        [HttpGet("migrainieWithDrinkMedicineFood/{userId}")]
-        public IActionResult GetDrinkFoodMedicineInfoFromMigraineId(int userId)
+        // Get detailed migraine info with migraine id => drink, food, medicine
+        [HttpGet("migraineWithDrinkMedicineFood/{migraineId}")]
+        public IActionResult GetDrinkFoodMedicineInfoFromMigraineId(int migraineId)
         {
-            var detailedMigraine = _migraineRepo.GetMoreDetailedMigraineInfo(userId);
+            var detailedMigraine = _migraineRepo.GetMoreDetailedMigraineInfo(migraineId);
             return Ok(detailedMigraine);
         }
 

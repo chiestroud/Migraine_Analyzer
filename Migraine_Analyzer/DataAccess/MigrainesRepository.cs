@@ -23,7 +23,8 @@ namespace Migraine_Analyzer.DataAccess
             using var db = new SqlConnection(_connectionString);
             var sql = @"SELECT *
                         FROM Migraines
-                        WHERE userId = @id";
+                        WHERE userId = @id
+                        ORDER BY currentYear DESC, monthId DESC, dayId DESC";
             var migraines = db.Query<Migraines>(sql, new { id });
             return migraines;
         }
@@ -66,7 +67,7 @@ namespace Migraine_Analyzer.DataAccess
                         ON m.timeId = td.id
                         JOIN Duration du
                         ON m.durationId = du.id
-                        WHERE m.userId = @id";
+                        WHERE m.id = @id";
 
             var results = db.Query<MigrainesExpanded, Users, Days, Months, Temperature, TimeOfTheDay, Durations, MigrainesExpanded>
                 (sql, (migraine, user, day, month, temp, time, duration) =>
@@ -96,7 +97,7 @@ namespace Migraine_Analyzer.DataAccess
                         ON m.medicineId = um.id
                         JOIN User_Drinks ud
                         ON m.drinkId = ud.id
-                        WHERE m.userId = @id";
+                        WHERE m.id = @id";
             var results = db.Query<MigraineWithFoodDrinkMedicine, Users, UserFood,
                 UserMedicines, UserDrinks, MigraineWithFoodDrinkMedicine>
                 (sql, (migraine, user, food, medicine, drink) =>
@@ -121,9 +122,10 @@ namespace Migraine_Analyzer.DataAccess
                          comment, foodId, drinkId, medicineId)
                         OUTPUT INSERTED.id
                         VALUES(@userId, GETUTCDATE(), @dayId, 
-                        @monthId, @currentYear, @timeId, @intensity, 
-                        @durationId, @vomit, @weather, @emotion, @comment, 
-                        @temperatureId, @foodId, @drinkId, @medicineId)";
+                        @monthId, @currentYear, @timeId, @intensity,
+                        @durationId, @vomit, @weather, @emotion, @temperatureId, @comment, 
+                        @foodId, @drinkId, @medicineId)";
+
             var parameters = new
             {
                 userId = migraine.UserId,
@@ -135,8 +137,8 @@ namespace Migraine_Analyzer.DataAccess
                 durationId = migraine.DurationId,
                 vomit = migraine.Vomit,
                 weather = migraine.Weather,
-                emotion = migraine.Emotion,
                 temperatureId = migraine.TemperatureId,
+                emotion = migraine.Emotion,
                 comment = migraine.Comment,
                 foodId = migraine.FoodId,
                 drinkId = migraine.DrinkId,
@@ -231,7 +233,7 @@ namespace Migraine_Analyzer.DataAccess
             var sql = @"SELECT TOP(3) ud.drinkName, COUNT(*) AS drinkCount
                         FROM Migraines m
                         JOIN User_Drinks ud
-                        ON m.foodId = ud.id
+                        ON m.drinkId = ud.id
                         WHERE m.userId = @id
                         GROUP BY ud.drinkName
                         ORDER BY drinkCount DESC";
