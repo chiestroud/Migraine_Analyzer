@@ -30,7 +30,7 @@ export default function MigraineHistory({ user }) {
               <tr key={record.id}>
                 <td>{record.monthId}/{record.dayId}/{record.currentYear}</td>
                 <td>{record.intensity}</td>
-                <td><CardLink href='#' onClick={() => handleClick(record.id)}>View Details</CardLink></td>
+                <td><CardLink href='#' onClick={() => handleClick(record.id)}>View Details / Edit</CardLink></td>
               </tr>
             ))}
           </tbody>

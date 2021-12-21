@@ -38,30 +38,34 @@ export default function UserProfile({ user }) {
 
   return (
     <>
-      <Card>
-        <CardImg className='profileImage' src={user?.imageUrl} />
-        <CardBody>
-          <CardTitle>Username: {userObject.username}</CardTitle>
-          <CardText>Name: {userObject.firstName} {userObject.lastName}</CardText>
-          <CardText>Member since {userObject.dateCreated}</CardText>
-          <CardText>Email: {userObject.email}</CardText>
-          <Button onClick={handleClick}>{openForm ? 'Close Form' : 'Edit'}</Button>
-          {openForm
-            && <UserForm userObject={userObject} setUserObject={setUserObject} handleSubmit={handleSubmit}/>}
-        </CardBody>
-      </Card>
+      <div className="profile-card-container">
+        <Card className="profile-card">
+          <CardImg className='profileImage' src={user?.imageUrl} />
+          <CardBody>
+            <CardTitle>Username: {userObject.username}</CardTitle>
+            <CardText>Name: {userObject.firstName} {userObject.lastName}</CardText>
+            <CardText>Member since {userObject.dateCreated}</CardText>
+            <CardText>Email: {userObject.email}</CardText>
+            <Button onClick={handleClick}>{openForm ? 'Close Form' : 'Edit'}</Button>
+            {openForm
+              && <UserForm userObject={userObject} setUserObject={setUserObject} handleSubmit={handleSubmit}/>}
+          </CardBody>
+        </Card>
+      </div>
+      <div className="user-item-container">
       <h2>Add Your Food, Drinks, Medicines</h2>
-      <Row className='user-food-drink-medicine'>
-        <Col md={4}>
-          <UserFoodForm user={user} />
-        </Col>
-        <Col>
-          <UserDrinkForm user={user}/>
-        </Col>
-        <Col>
-          <UserMedicineForm user={user} />
-        </Col>
-      </Row>
+        <Row className='user-food-drink-medicine'>
+          <Col md={4}>
+            <UserFoodForm user={user} />
+          </Col>
+          <Col>
+            <UserDrinkForm user={user}/>
+          </Col>
+          <Col>
+            <UserMedicineForm user={user} />
+          </Col>
+        </Row>
+      </div>
     </>
   );
 }
