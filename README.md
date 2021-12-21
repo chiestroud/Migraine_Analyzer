@@ -4,12 +4,12 @@ Migraine Analyzer is an application that analyzes your migraines. This is not a 
 Users can input detailed information about their migraines and the app will help you analyze your migraine trends!
 
 ## Features
-:pill: Migraine Analyzer features its own API using ASP.NET Core and T-SQL for the database. 
-:pill: A non-logged in user can only view the Home page.
-:pill: A user is able to authenticate via google Oauth by logging in to the page via Sign in button.
-:pill: An authenticated user is able to view their own profile and make changes on it.
-:pill: An authenticated user is able to log their migraine records and edit the details.
-:pill: An authenticated user is able to view the migraine analysis and trends of their migraines.
+<h5>:pill: Migraine Analyzer features its own API using ASP.NET Core and T-SQL for the database. </h5>
+<h5>:pill: A non-logged in user can only view the Home page.</h5>
+<h5>:pill: A user is able to authenticate via google Oauth by logging in to the page via Sign in button.</h5>
+<h5>:pill: An authenticated user is able to view their own profile and make changes on it.</h5>
+<h5>:pill: An authenticated user is able to log their migraine records and edit the details.</h5>
+<h5>:pill: An authenticated user is able to view the migraine analysis and trends of their migraines.</h5>
 
 ## Images
 
