@@ -1,7 +1,6 @@
 # :pill: MigraineAnalyzer
 
-Migraine Analyzer is an application that analyzes your migraines. This is not a typical migraine diary to log migraines. 
-Users can input detailed information about their migraines and the app will help you analyze your migraine trends!
+Have you ever wondered what is causing you migraines? Migraine Analyzer is an application that helps analyze your migraines. This is not a typical migraine diary to log migraines. When signed in, users can input detailed information about their migraines (including weather, temp, emotion, consumed food and drinks) and the app will analyze your migraine trends!
 
 ## Features
 <h5>:pill: Migraine Analyzer features its own API using ASP.NET Core and T-SQL for the database. </h5>
@@ -17,6 +16,7 @@ Users can input detailed information about their migraines and the app will help
 ![image](https://user-images.githubusercontent.com/68720317/148001506-a587055a-de03-48f1-be74-530bc2178ddb.png)
 ![image](https://user-images.githubusercontent.com/68720317/148001542-c5b58058-ae98-4849-a3a0-8cfeea3e1d34.png)
 ![image](https://user-images.githubusercontent.com/68720317/148001561-a964113f-abc4-4c02-8d58-25a831aa84ec.png)
+![image](https://user-images.githubusercontent.com/68720317/148001834-5669cf2a-a026-46e5-86ed-fc68e28128d7.png)
 
 
 ## Technologies
