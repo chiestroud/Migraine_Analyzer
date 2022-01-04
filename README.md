@@ -12,6 +12,12 @@ Users can input detailed information about their migraines and the app will help
 <h5>:pill: An authenticated user is able to view the migraine analysis and trends of their migraines.</h5>
 
 ## Images
+### User view
+![Signed-in User](https://user-images.githubusercontent.com/68720317/148001278-60a7c6cd-fb0a-4261-b18b-2ee096b706cb.png)
+![image](https://user-images.githubusercontent.com/68720317/148001506-a587055a-de03-48f1-be74-530bc2178ddb.png)
+![image](https://user-images.githubusercontent.com/68720317/148001542-c5b58058-ae98-4849-a3a0-8cfeea3e1d34.png)
+![image](https://user-images.githubusercontent.com/68720317/148001561-a964113f-abc4-4c02-8d58-25a831aa84ec.png)
+
 
 ## Technologies
 C# / .NET Core / Firebase / React / JavaScript / SaSS / HTML
@@ -21,4 +27,4 @@ C# / .NET Core / Firebase / React / JavaScript / SaSS / HTML
 https://www.canva.com/design/DAExcXqg1mc/9YgFI-QMs9NB1WWd9JQN3A/view#1
 
 ## ERD
-https://dbdiagram.io/embed/61a82ff78c901501c0dc7b27
+![image](https://user-images.githubusercontent.com/68720317/148001647-b222d533-28f9-4665-bf09-f0f65a659848.png)
